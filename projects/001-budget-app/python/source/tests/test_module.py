@@ -1,7 +1,11 @@
-import unittest
-import budget
-from budget import create_spend_chart
+import sys
+import os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
+from source.class_config import budget
+from source.utility.create_spend_chart import create_spend_chart
+import unittest
 
 class UnitTests(unittest.TestCase):
     def setUp(self):

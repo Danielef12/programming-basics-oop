@@ -1,9 +1,7 @@
 class PrintMenu:
-    @staticmethod
     def print_initial_message():
         print("Welcome to budget app")
 
-    @staticmethod
     def print_menu():
         print("What would you like to do?")
         print("1. Create a new category budget")

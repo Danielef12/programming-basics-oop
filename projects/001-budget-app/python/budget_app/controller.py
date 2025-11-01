@@ -1,4 +1,4 @@
-from source.budget import Category
+from budget_app.budget import Category
 
 
 class Controller:
@@ -20,8 +20,9 @@ class Controller:
             raise ValueError(f"Category {name} does not exist")
 
     def create_spend_chart(self):
+        categories = list(self.categories.values())
         spending = []
-        for category in self.categories:
+        for category in categories:
             total_spent = 0
             for entry in category.ledger:
                 amount = entry["amount"]
@@ -43,12 +44,12 @@ class Controller:
                     chart += "   "
             chart += "\n"
 
-        chart += "    -" + "---" * len(self.categories) + "\n"
+        chart += "    -" + "---" * len(categories) + "\n"
 
-        max_len = max(len(c.name) for c in self.categories)
+        max_len = max(len(c.name) for c in categories)
         for i in range(max_len):
             chart += "     "
-            for c in self.categories:
+            for c in categories:
                 if i < len(c.name):
                     chart += c.name[i] + "  "
                 else:

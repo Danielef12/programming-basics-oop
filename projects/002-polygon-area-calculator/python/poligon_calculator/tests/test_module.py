@@ -10,17 +10,17 @@ class UnitTests(unittest.TestCase):
     def test_subclass(self):
         actual = issubclass(shape_calculator.Square, shape_calculator.Rectangle)
         expected = True
-        self.assertEqual(actual, expected, 'Expected Square class to be a subclass of the Rectangle class.')
+        self.assertEqual(actual, expected, 'Expected Square class_config to be a subclass of the Rectangle class_config.')
 
     def test_distinct_classes(self):
         actual = shape_calculator.Square is not shape_calculator.Rectangle
         expected = True
-        self.assertEqual(actual, expected, 'Expected Square class to be a distinct class from the Rectangle class.')
+        self.assertEqual(actual, expected, 'Expected Square class_config to be a distinct class_config from the Rectangle class_config.')
 
     def test_square_is_square_and_rectangle(self):
         actual = isinstance(self.sq, shape_calculator.Square) and isinstance(self.sq, shape_calculator.Rectangle)
         expected = True
-        self.assertEqual(actual, expected, 'Expected square object to be an instance of the Square class and the Rectangle class.')
+        self.assertEqual(actual, expected, 'Expected square object to be an instance of the Square class_config and the Rectangle class_config.')
 
     def test_rectangle_string(self):
         actual = str(self.rect)

@@ -22,11 +22,11 @@ class GetUserInput:
         """Request the user's menu choice (0–3).
 
                 Returns:
-                    str: The chosen option ("0", "1", "2", "3") or None if invalid.
+                    str: The chosen option ("0", "1", "2", "3").
                 """
-        while (choice := input("Enter your choice: ").strip()) in ("1", "2", "3", "0"):
-            return choice
-        else:
+        while (choice := input("Enter your choice: ").strip()) not in ("1", "2", "3", "0"):
             print("Invalid choice. Please try again.")
-            return None
+        else:
+            return choice
+
 

@@ -165,12 +165,7 @@ class ProbabilityCalculator:
         Returns:
             Optional[int]: Number of experiments.
         """
-        while True:
-            try:
-                num_experiments = int(input("How many experiments want to execute? "))
-            except ValueError:
-                print("Insert a valid integer.")
-                continue
+        while (num_experiments:= self.user_input.validate_positive_number("How many experiments want to execute? ")):
 
             if num_experiments <= 0:
                 print("Number of experiments must be greater than 0.")
